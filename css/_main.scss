@@ -1,0 +1,1024 @@
+@use "../css/skin" as *;
+@use "../css/variables" as *;
+
+.introduction {
+    background-color: $color-main;
+    padding-top: 30px;
+        
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: $gap-md;
+        overflow-x: scroll;
+        padding-bottom: 30px;
+            
+        &__link--active {
+            font-size: 30px;
+            font-weight: 700;
+            color: $color-grey-text;
+            white-space: nowrap;
+            background: $gradient-redtext;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        &__link {
+            font-size: 30px;
+            font-weight: 700;
+            color: $color-grey-text;
+            white-space: nowrap;
+        }
+    }
+
+    .introduction-block {
+        border-top: 4px solid rgba(255, 255, 255, 0.30);
+        
+        &__title {
+            padding-top: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 37px;
+            color: white;
+        }
+        
+        &__text {
+            padding-top: 30px;
+            font-size: 19px;
+            line-height: 30px;
+            color: #ffffffc7;
+            padding-bottom: 30px;
+        }
+    }
+}
+
+.section__link {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: $line-height;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #24A3FF;
+    padding-bottom: 10px;
+}
+
+.section__title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: $line-height;
+    background: $gradient-redtext-rev;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media screen and (min-width: 768px) {
+        font-size: 38px;
+        line-height:46px;
+    }
+}
+
+.section__heading {
+    text-align: center;
+    font-size: 14px;
+    color: #323264;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.advantages {
+    padding-bottom: 60px;
+    border-radius: 0px 0px 12px 12px;
+    background: $gradient-soft;
+
+    &__block {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        gap: $gap-md;
+    }
+
+    &__title {
+        padding-bottom: 30px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__img {
+
+        img {
+            background-color: white;
+            padding: 14px;
+            border-radius: 24px;
+        }
+    }
+
+    &__heading {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 27px;
+        color: #24A3FF;
+        padding-top: 30px;
+        padding-bottom: 15px;
+    }
+
+    &__text {
+        font-size: $font-size;
+        line-height: 26px;
+        color: white;
+    }
+}
+
+.shadow {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+
+    &__item {
+        width: 100%;
+        height: 10px;
+        border-radius: 0px 0px 12px 12px;
+        background: #CACADB;
+
+        &--sm{
+            width: 95%;
+            background: #E7E7F2;
+        }
+    }
+}
+
+.team {
+    padding-top: 30px;
+
+    .team-block {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-grey-bg;
+        border-radius: 12px;
+
+        &__img {
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+        }
+
+        &__text {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 37px;
+            background: $gradient-redtext-rev;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        &__name {
+            padding-top: 30px;
+            font-size: $font-size;
+            font-weight: 700;
+            line-height: $line-height;
+            color: $color-grey-text;
+        }
+
+        &__post {
+            padding-top: 6px;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: 400;
+        }
+    }
+
+    .carousel {
+        display: flex;
+        position: relative;
+        gap: $gap-ux;
+        padding-top: 30px;
+        justify-content: center;
+
+        span {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                background-color: #24A3FF;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                opacity: 0.2;
+            }   
+        }
+    }
+}
+
+.clients {
+    
+    &__heading {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+
+    &__logo {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        grid-template-columns: 1fr;
+    }
+
+    &__logo--special {
+        display: none;
+    }
+}
+
+.blog {
+    background-color: $color-grey-bg;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &__heading {
+        padding-bottom: 0;
+    }
+
+    &__img {
+        img {
+            border-radius: 8px 8px 0 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $gap-md;
+        padding-top: 30px;
+    }
+    
+    &__item {
+        border-radius: 8px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__preveiw {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    &__title {
+        font-size: $font-size;
+        color: #24A3FF;
+        font-weight: 700;
+        line-height: 20px;
+    }
+
+    &__data {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height: 15px;
+        color: $color-grey-text;
+        padding: 15px 0;
+        border-bottom: 4px solid $color-grey-separator;
+    }
+
+    &__text {
+        padding-top: 15px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+//about
+
+.acquaintance {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__info {
+        padding: 30px 0;
+        color: black;
+        font-size: 19px;
+        line-height: 30px;
+    }
+
+    &__advantages {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding-left: 30px;
+        border-left: 4px solid $color-grey-separator;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+
+        p {
+            font-size: 36px;
+        }
+    }
+
+    &__text {
+        color: $color-main;
+        font-size: 16px;
+        line-height: $line-height;
+    }
+}
+
+.picture-team {
+    background: url(../images/Team.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &__text {
+        color: white;
+        text-shadow: 0px 15px 30px rgba(40, 40, 86, 0.80);
+        font-size: 36px;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 13px;
+        text-transform: uppercase;
+        opacity: 0.8;
+        padding: 35px;
+        line-height: $line-height;
+    }
+}
+
+.competence {
+
+    &__block {
+        flex-direction: column-reverse;
+        padding-bottom: 60px;
+    }
+}
+
+.achievements {
+    background: $color-grey-bg;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &__heading {
+        padding-bottom: 30px;
+    }
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        line-height: 0;
+
+        div:nth-child(1) {
+            img{
+                padding: 25px 30%;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+
+                img{
+                    padding: 25px 40%;
+                }
+            }
+        }
+
+        div:nth-child(2) {
+            img {
+                padding: 25px 10%;
+            }
+        }
+
+        div:nth-child(3) {
+            img {
+                padding: 25px 1px;
+            }
+        }
+
+        div:nth-child(4) {
+            img {
+                padding: 25px 8%;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            
+            div:not(:nth-child(1)) {
+                display: none;
+            }
+        }
+    }
+
+    &__picture {
+        width: 100%;
+        background: white;
+        border-radius: 12px;
+    }
+    
+    .carousel {
+        display: flex;
+        position: relative;
+        gap: $gap-ux;
+        padding-top: 30px;
+        justify-content: center;
+
+        span {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #24A3FF;
+
+            &:not(:nth-child(1)) {
+                opacity: 0.2;
+            }
+
+            @media screen and (min-width: 768px) {
+                &:nth-child(4),
+                &:nth-child(5),
+                &:nth-child(6) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+//contact
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+
+        &__phone,
+        &__email,
+        &__address {
+            color: $color-main;
+            font-size: 21px;
+            line-height: 30px;
+        }
+
+        &__address {
+            padding-bottom: 30px;
+            border-bottom: 4px solid $color-grey-separator;
+            color: $color-main-alt;
+        }
+        
+        &__communication {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 30px 0;
+            border-bottom: 4px solid $color-grey-separator;
+        }
+
+        &__email {
+            color: $color-active-activ;
+        }
+
+        &__social {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-top: 30px;
+            cursor: pointer;
+
+            &:hover > * {
+            color: $color-accent;
+            }
+        }
+
+        &__facebook {
+            font-size: 38px;
+            line-height: $line-height;
+            color: $color-active;
+        }
+
+        &__info {
+            color: $color-active;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+
+    .block-form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        padding: 30px;
+        background-color: $color-grey-bg;
+        border-radius: 12px;
+        gap: 30px;
+
+        .contact-form {
+
+            &__heading {
+                padding-bottom: 30px;
+            }
+
+            & input[type="text"],
+            & input[type="email"],
+            & input[type="tel"],
+            & textarea {
+                color: $color-grey-text;
+                font-family: Montserrat;
+                font-size: $font-size;
+                line-height: 26px;
+                width: 100%;
+                background: white;
+                margin: 0 0 5px;
+                padding: 10px;
+                border-radius: 8px;
+
+                &[type="text"]:hover,
+                &[type="email"]:hover,
+                &[type="tel"]:hover,
+                &:hover {
+                    transition: border-color 0.3s ease-in-out;
+                    border: 1px solid #aaa;
+                    border-radius: 8px;
+                }
+            }
+
+            & input[type="submit"] {
+                color: white;
+                text-align: center;
+                font-family: Montserrat;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: $line-height;
+                border-radius: 12px;
+                background: $color-active;
+                box-shadow: 0px 0px 20px 0px rgba(36, 163, 255, 0.50);
+                width: 100%;
+                margin: 25px 0 0;
+                padding: 18px;
+                text-transform: uppercase;
+                transition: transform 80ms ease-in;
+                cursor:pointer;
+
+                &:hover {
+                    background: $color-active-activ;
+                }
+            }
+
+            & textarea {
+                resize: none;
+            }
+
+            
+
+            & p {
+                margin: 0 0 10px;
+                min-width: 100%;
+                padding: 0;
+                width: 100%;
+            }
+
+            &__title {
+                padding-top: 30px;
+                padding-bottom: 15px;
+                color: $color-grey-text;
+                font-size: 14px;;
+                font-weight: 700;
+                line-height: $line-height;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+    .introduction {
+        padding-top: 60px;
+            
+        .menu {
+            padding-bottom: 60px;
+                
+            &__link--active,
+            &__link {
+                font-size: 38px;
+                line-height: 46px;
+
+                &:hover {
+                    color: #F0145A;
+                }
+            }
+        }
+    
+        .introduction-block {
+
+            &__title {
+                padding-top: 60px;
+                font-size: 30px;
+            }
+            
+            &__text {
+                padding-bottom: 60px;
+            }
+        }
+        
+    }
+
+    .advantages {
+
+        &__title {
+            padding-bottom: 60px;
+        }
+
+        &__block {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: $gap;
+        }
+    }
+
+    .clients {
+
+        &__logo {
+            display: none;
+        }
+
+        &__logo--special {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+    
+    .blog {
+        
+        &__content {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+    
+            :nth-child(1){
+                grid-area: 1 / 1 / 2 / 2;
+            }
+            :nth-child(2) {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+            :nth-child(3) {
+                grid-area: 2 / 1 / 3 / 3; 
+            }
+        }
+    }
+
+    .acquaintance {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .picture-team {
+
+        &__text {
+            padding-top: 89px;
+            padding-bottom: 89px;
+            font-size: 46px;
+        }
+    }
+
+    .competence {
+
+        &__block {
+            padding-top: 60px;
+        }
+    
+        &__info {
+            padding-top: 0;
+        }
+    }
+
+    .wrapper {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .block-form {
+        margin-top: 60px;
+        
+        .contact-form {
+            
+            &__heading {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .introduction {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        background-color: $color-main;
+        padding-bottom: 60px;
+        
+        .menu-wrap {
+            padding-right: 60px;
+        }
+
+        .menu {
+            flex-direction: column;
+            align-items: flex-end;
+            padding-bottom: 0;
+            overflow: hidden;
+        }
+    
+        .introduction-block {
+            border-top: 0;
+            border-left: 4px solid rgba(255, 255, 255, 0.3);
+            padding-left: 60px;
+            
+            &__text {
+                padding-bottom: 0;
+            }
+        }
+        
+    }
+    
+    .advantages {
+    
+        &__block {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+    }
+
+    .team {
+        padding-top: 30px;
+    
+        .team-block {
+            flex-direction: row;
+    
+            &__img {
+                border-radius: 8px 0 0 8px;
+                width: 40%;
+                height: 528px;
+            }
+
+            &__info {
+                width: 60%;
+            }
+    
+            &__text {
+                font-size: 38px;
+                line-height: 46px;
+            }
+        }
+    }
+
+    .clients {
+
+        &__logo--special {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+    }
+    }
+
+    .blog {
+
+        &__heading {
+            padding-bottom: 30px;
+        }
+        
+        &__content {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+            padding-top: 0;
+        }
+
+        &__item {
+            width: 31%;
+        }
+    }
+
+    .acquaintance {
+        flex-direction: row;
+
+        &__block {
+            width: 57%;
+            padding-right: 30px;
+        }
+
+        &__info {
+            padding-bottom: 0;
+        }
+
+        &__advantages {
+            width: 43%;
+        }
+    }
+
+    .competence {
+
+        &__block {
+            flex-direction: row-reverse;
+            gap: 60px;
+            width: 100%;
+            padding-right: 0;
+        }
+
+        &__heading {
+            width: 43%;
+        }
+
+        &__info {
+            width: 57%;
+        }
+    }
+
+    .picture-team {
+
+        &__text {
+            padding-top: 103px;
+            padding-bottom: 103px;
+            font-size: 86px;
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+
+        .contact {
+            width: 50.3%;
+        }
+
+        .block-form {
+            margin-top: 0;
+            width: 49.7%;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .introduction {
+        padding: 60px 180px;
+    }
+
+    .team {
+    
+        .team-block {
+
+            &__img {
+                width: 30%;
+                height: 344px;
+            }
+            
+            &__info {
+                width: 70%;
+            }
+        }
+    }
+
+    .acquaintance {
+        padding: 60px 180px;
+
+        &__block {
+            width: 64%;
+        }
+
+        &__advantages {
+            width: 36%;
+        }
+    }
+
+    .picture-team {
+
+        &__text {
+            padding-top: 163px;
+            padding-bottom: 163px;
+            font-size: 96px;
+        }
+    }
+
+    .competence {
+    padding: 0 180px;
+        
+        &__block {
+            width: 100%;
+        }
+
+        &__heading {
+            width: 36%;
+        }
+
+        &__info {
+            width: 64%;
+        }
+    }
+
+    .wrapper {
+        padding: 60px 180px;
+    }
+}
+
+
+
+@media screen and (min-width: 1920px) {
+
+    .introduction {
+        padding: 60px 280px;
+    }
+
+    .clients {
+        padding: 0 100px 60px;
+
+        &__logo--special {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    }
+
+    .picture-team {
+
+        &__text {
+            padding-top: 236px;
+            padding-bottom: 231px;
+            font-size: 96px;
+        }
+    }
+
+    .competence {
+        padding: 0 280px;
+    
+            &__heading {
+                width: 28%;
+            }
+    
+            &__info {
+                width: 72%;
+            }
+        }
+
+        .wrapper {
+            padding: 60px 280px;
+        }
+}

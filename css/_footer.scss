@@ -1,0 +1,179 @@
+@use "../css/skin" as *;
+@use "../css/variables" as *;
+
+.footer {
+    padding-bottom: 30px;
+    background-color: $color-grey-bg;
+
+    .footer-block {
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        padding-top: 30px;
+
+        &__address,
+        &__contacts {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        &__social,
+        &__email,
+        &__copyright {
+            font-size: $font-size;
+            font-weight: 700;
+            line-height: 20px;
+            color: $color-active;
+        }
+
+        &__social{
+            font-size: 38px;
+        }
+
+        .group__address,
+        .group__phone {
+            color: $color-main;
+        }
+
+        &__copyright {
+            text-align: center;
+            color: $color-grey-text;
+            padding-top: 30px;
+            font-weight: 400;
+        }
+
+        .footer-popup {
+            display: none;
+    
+            &__container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            &__heading {
+                font-size: 24px;
+            }
+        }
+
+        #popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            padding: 20px 3%;
+            border-radius: 12px;
+            background-color: #f5f5fa8c;
+            -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        }
+        
+        #cross {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+        }
+        
+        #cross::before,
+        #cross::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 9px;
+            cursor: pointer;
+            width: 3px;
+            height: 20px;
+            background-color: $color-accent;
+            z-index: 2;
+        }
+    
+        #cross::before {
+            transform: rotate(45deg);
+        }
+    
+        #cross::after {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer {
+        padding-bottom: 30px;
+        background-color: $color-grey-bg;
+    
+        .footer-block {
+            grid-template-rows: repeat(2, auto);
+            grid-template-columns: repeat(2, auto);
+            grid-template-areas: 'address copyright' 'contact contact';
+            gap: 21px;
+            border-top: 2px solid $color-grey-separator;
+
+            &__address,
+            &__contacts {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+
+            &__contacts {
+                grid-area: contact;
+            }
+
+            &__address {
+                align-items: flex-end;
+                grid-area: address;
+
+                a {
+                    padding: 0;
+                }
+            }
+            
+            &__copyright {
+                grid-area: copyright;
+                text-align: end;
+                padding-top: 0;
+            }
+
+            &__phone,
+            &__email,
+            &__link {
+                position: relative;
+            }
+
+            &__email::after,
+            &__phone::after,
+            &__link::after {
+                content:'';
+                position: absolute;
+                top: 8px;
+                left: -16px;
+                background-color: $color-grey-text;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+            }
+
+            &__link::after {
+                top: 6px;
+            }
+
+            .footer-popup {
+            
+                &__heading {
+                    font-size: 38px;
+                }
+            }
+    
+            #popup {
+                width: 75%;
+            }
+        }
+    }
+}

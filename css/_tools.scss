@@ -1,0 +1,59 @@
+@use "../css/variables" as *;
+@use "../css/skin" as *;
+
+html {
+    font-size: $font-size;
+    font-family: $font-family;
+    font-weight: 400;
+    line-height: $line-height;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.group__phone {
+    font-size: $font-size;
+    font-weight: 700;
+    line-height: 20px;
+    white-space: nowrap;
+}
+
+.group__address {
+    display: block;
+    position: relative;
+    font-size: $font-size;
+    line-height: 20px;
+    color: $color-grey-text;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+
+// ширина от min-widht для мобильний 
+@media screen and (min-width: 375px) {
+    .container {
+        padding: 0 $gap-md;
+    }
+}
+
+// ширина от min-widht для лептоп 
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 0 $gap;
+    }
+}
+
+// ширина от min-widht для десктоп 
+@media screen and (min-width: 1920px) {
+    .container {
+    padding: 0 $gap-lg;
+    }
+}
