@@ -41,16 +41,16 @@
             </div>
             <div class="navbar">
                 <div id="burger" class="navbar__btn">
-                    <span class="navbar__btn-row--aboutpage"></span>
-                    <span class="navbar__btn-row--aboutpage"></span>
-                    <span class="navbar__btn-row--aboutpage"></span>
+                    <span class="navbar__btn-row navbar__btn-row--aboutpage"></span>
+                    <span class="navbar__btn-row navbar__btn-row--aboutpage"></span>
+                    <span class="navbar__btn-row navbar__btn-row--aboutpage"></span>
                 </div>
                 <ul id="navbarList" class="nav">
-                    <li class="nav__item"><a href="about.html" class="nav__link--aboutpage">about us</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link--aboutpage">services</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link--aboutpage">team</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link--aboutpage">publications</a></li>
-                    <li class="nav__item active"><a href="contact.html" class="nav__link--aboutpage">contact</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link nav__link--aboutpage">about us</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link nav__link--aboutpage">services</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link nav__link--aboutpage">team</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link nav__link--aboutpage">publications</a></li>
+                    <li class="nav__item active"><a href="contact.html" class="nav__link nav__link--aboutpage">contact</a></li>
                 </ul>
             </div>
         </div>
@@ -72,7 +72,7 @@
                 <form class="contact-form" method="POST" action="https://fom.in.ua/echo">
                     <h1 class="contact-form__heading section__title">We would like to help you</h1>
                     <p>
-                        <input type="text" class="form-control" name="name" placeholder="Name" required="required" />
+                        <input type="text" name="name" placeholder="Name" required="required" />
                     </p>
                     <p>
                         <textarea name="Message" rows="4" cols="10" readonly="" placeholder="Message"></textarea>
@@ -81,16 +81,15 @@
                         How to answer you?
                     </h3>
                     <p>
-                        <input type="tel" class="form-control" name="phone number" pattern="\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}" title="+38 (063) 223-23-23" placeholder="Phone number" required="required" />
+                        <input type="tel" name="phone number" pattern="\+38 \(\d{3}\) \d{3}-\d{2}-\d{2}" title="+38 (063) 223-23-23" placeholder="Phone number" required="required" />
                     </p>
                     <p>
-                        <input type="email" class="form-control" name="email" placeholder="Email" required="required" />
+                        <input type="email" name="email" placeholder="Email" required="required" />
                     </p>
                     <p>
-                        <input type="submit" class="form-submit" name="submit" value="Send message" />
+                        <input type="submit" name="submit" value="Send message" />
                     </p>
-
-                </div>
+                </form>
             </section >
         </div>
     </main>

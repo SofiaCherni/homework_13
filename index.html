@@ -124,7 +124,6 @@
             <div class="team-block">
                 <div class="team-block__img">
                     <img class="img__mobile" src="images/partner.png" alt="man">
-                    
                 </div>
                 <div class="team-block__info">
                     <a class="section__link team-block__link" href="#">команда ></a>
@@ -220,6 +219,28 @@
                 </div>
             </div>
         </section>
+        <div class="box">
+            <div class="call-back">
+                <a class="call-back__button" id="linkpopup" href="#">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+            </div>
+            <div class="footer-popup" id="popup">
+                <div id="cross"></div>
+                <div class="footer-popup__container">
+                    <form class="footer-popup__contact-form " method="POST" action="https://fom.in.ua/echo">
+                        <h2 class="footer-popup__heading section__title">Leave your number</h2>
+                        <p class="footer-popup__text">We will contact you within 5 minutes</p>
+                        <p>
+                            <input type="tel" name="phone number" pattern="+38d{10}" placeholder="Phone number" required="required" />
+                        </p>
+                        <p>
+                            <input type="submit" name="submit" value="Send" />
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="footer container">
         <div class="footer-block">
@@ -227,14 +248,7 @@
                 <p class="footer-block__text">
                     Kyiv, Mechnikova str., 14/1
                 </p>
-                <a class="section__link footer-block__link" id="linkpopup" href="#"> on map</a>
-                <div class="footer-popup" id="popup">
-                    <div id="cross"></div>
-                    <div class="footer-popup__container">
-                        <h2 class="footer-popup__heading section__title">You can find us here</h2>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10989.771527396679!2d30.7479542!3d46.4795422!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c6319f49eaaaab%3A0xa6467105eed9b98c!2sHillel%20IT%20School!5e0!3m2!1sru!2sua!4v1715474426391!5m2!1sru!2sua" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
+                <a class="section__link footer-block__link" href="#"> on map</a>
             </div>
             <div class="footer-block__contacts">
                 <a class="footer-block__social" href="#"><i class="fa-brands fa-facebook"></i></a>

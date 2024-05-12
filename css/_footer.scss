@@ -28,6 +28,11 @@
             color: $color-active;
         }
 
+        &__social:hover,
+        &__email:hover {
+            color: $color-active-activ;
+        }
+
         &__social{
             font-size: 38px;
         }
@@ -35,6 +40,10 @@
         .group__address,
         .group__phone {
             color: $color-main;
+
+            &:hover {
+                color: $color-active-activ;
+            }
         }
 
         &__copyright {
@@ -42,63 +51,6 @@
             color: $color-grey-text;
             padding-top: 30px;
             font-weight: 400;
-        }
-
-        .footer-popup {
-            display: none;
-    
-            &__container {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            &__heading {
-                font-size: 24px;
-            }
-        }
-
-        #popup {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            padding: 20px 3%;
-            border-radius: 12px;
-            background-color: #f5f5fa8c;
-            -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-            -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-        }
-        
-        #cross {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            width: 20px;
-            height: 20px;
-        }
-        
-        #cross::before,
-        #cross::after {
-            position: absolute;
-            content: "";
-            top: 0;
-            right: 9px;
-            cursor: pointer;
-            width: 3px;
-            height: 20px;
-            background-color: $color-accent;
-            z-index: 2;
-        }
-    
-        #cross::before {
-            transform: rotate(45deg);
-        }
-    
-        #cross::after {
-            transform: rotate(-45deg);
         }
     }
 }
@@ -162,17 +114,6 @@
 
             &__link::after {
                 top: 6px;
-            }
-
-            .footer-popup {
-            
-                &__heading {
-                    font-size: 38px;
-                }
-            }
-    
-            #popup {
-                width: 75%;
             }
         }
     }

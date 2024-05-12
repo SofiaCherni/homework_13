@@ -57,8 +57,12 @@
     line-height: $line-height;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #24A3FF;
+    color: $color-active;
     padding-bottom: 10px;
+
+    &:hover {
+        color: $color-active-activ;
+    }
 }
 
 .section__title {
@@ -86,6 +90,20 @@
     text-transform: uppercase;
 }
 
+.group__phone {
+    font-size: $font-size;
+    font-weight: 700;
+    line-height: 20px;
+    white-space: nowrap;
+}
+
+.group__address {
+    position: relative;
+    font-size: $font-size;
+    line-height: 20px;
+    color: $color-grey-text;
+}
+
 .advantages {
     padding-bottom: 60px;
     border-radius: 0px 0px 12px 12px;
@@ -107,6 +125,13 @@
     &__item {
         display: flex;
         flex-direction: column;
+
+        &:hover {
+            transition: border-color 0.3s ease-in-out;
+            box-shadow: 0px 0px 30px -1px rgba(0,0,0,0.75);
+            border-radius: 8px;
+            padding: 5px;
+        }
     }
 
     &__img {
@@ -289,6 +314,12 @@
         background-color: white;
         display: flex;
         flex-direction: column;
+
+        &:hover {
+            transition: border-color 0.3s ease-in-out;
+            box-shadow: 0px 0px 30px -1px rgba(0,0,0,0.75);
+            border-radius: 8px;
+        }
     }
 
     &__preveiw {
@@ -320,6 +351,155 @@
         font-size: 14px;
         line-height: 22px;
     }
+}
+
+// popup 
+.box {
+    .call-back {
+        color: #239cf1;
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        background-color: $color-active;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: call-back 3s linear infinite;
+        transition: all 200ms ease-out;
+    
+        .fa-solid {
+            font-size: 30px;
+            color: white;
+        }
+    }
+    
+    .footer-popup {
+        display: none;
+    
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    
+        &__heading {
+            font-size: 24px;
+        }
+
+        &__text {
+            font-size: $font-size;
+            line-height: $line-height;
+            padding-bottom: 50px;
+        }
+    
+        &__contact-form {
+            & input[type="tel"] {
+                color: $color-grey-text;
+                font-family: Montserrat;
+                font-size: $font-size;
+                line-height: 26px;
+                width: 100%;
+                background: white;
+                margin: 0 0 5px;
+                padding: 10px;
+                border-radius: 8px;
+            
+                &[type="tel"]:hover {
+                    transition: border-color 0.3s ease-in-out;
+                    border: 1px solid #aaa;
+                    border-radius: 8px;
+                }
+            }
+
+            & input[type="submit"] {
+                color: white;
+                text-align: center;
+                font-family: Montserrat;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: $line-height;
+                border-radius: 12px;
+                background: $color-active;
+                box-shadow: 0px 0px 20px 0px rgba(36, 163, 255, 0.50);
+                width: 100%;
+                margin: 25px 0 0;
+                padding: 18px;
+                text-transform: uppercase;
+                transition: transform 80ms ease-in;
+                cursor:pointer;
+
+                &:hover {
+                    background: $color-active-activ;
+                }
+            }
+        }
+    }
+
+    .footer-popup::backdrop {
+        background-color: #252525;
+        opacity: 0.8;
+    }
+
+    @keyframes call-back {
+        0% {
+            box-shadow: 0 0 0 0 #239cf1, 0 0 0 0 rgba(9, 144, 255, 0.7);
+        }
+        40% {
+            box-shadow: 0 0 0 13.62667px rgba(255, 186, 38, 0), 0 0 0 6.81333px rgba(9, 144, 255, 0.7);
+        }
+        80% {
+            box-shadow: 0 0 0 27.25333px rgba(255, 186, 38, 0), 0 0 0 13.62667px rgba(9, 144, 255, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 34.06667px rgba(255, 186, 38, 0), 0 0 0 27.25333px rgba(9, 136, 255, 0);
+        }
+    } 
+}
+
+#popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px 3%;
+    border-radius: 12px;
+    background-color: $color-grey-bg;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+#cross {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#cross::before,
+#cross::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 9px;
+    cursor: pointer;
+    width: 3px;
+    height: 20px;
+    background-color: $color-accent;
+    z-index: 2;
+}
+
+#cross::before {
+    transform: rotate(45deg);
+}
+
+#cross::after {
+    transform: rotate(-45deg);
 }
 
 //about
@@ -389,7 +569,6 @@
 }
 
 .competence {
-
     &__block {
         flex-direction: column-reverse;
         padding-bottom: 60px;
@@ -520,7 +699,13 @@
         }
 
         &__email {
+            color: $color-active;
+        }
+        
+        &__phone:hover ,
+        &__email:hover {
             color: $color-active-activ;
+            font-weight: 500;
         }
 
         &__social {
@@ -561,7 +746,6 @@
         gap: 30px;
 
         .contact-form {
-
             &__heading {
                 padding-bottom: 30px;
             }
@@ -616,8 +800,6 @@
                 resize: none;
             }
 
-            
-
             & p {
                 margin: 0 0 10px;
                 min-width: 100%;
@@ -638,8 +820,6 @@
         }
     }
 }
-
-
 
 @media screen and (min-width: 768px) {
 
@@ -675,7 +855,6 @@
     }
 
     .advantages {
-
         &__title {
             padding-bottom: 60px;
         }
@@ -688,7 +867,6 @@
     }
 
     .clients {
-
         &__logo {
             display: none;
         }
@@ -707,7 +885,6 @@
     }
     
     .blog {
-        
         &__content {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 1fr);
@@ -730,7 +907,6 @@
     }
 
     .picture-team {
-
         &__text {
             padding-top: 89px;
             padding-bottom: 89px;
@@ -739,7 +915,6 @@
     }
 
     .competence {
-
         &__block {
             padding-top: 60px;
         }
@@ -758,11 +933,30 @@
         margin-top: 60px;
         
         .contact-form {
-            
             &__heading {
                 font-size: 30px;
             }
         }
+    }
+
+    .box {
+        .call-back {
+            position: fixed;
+            right: 30px;
+            bottom: 50px;
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    .footer-popup {
+        &__heading {
+            font-size: 32px;
+        }
+    }
+
+    #popup {
+        width: 50%;
     }
 }
 
@@ -800,7 +994,6 @@
     }
     
     .advantages {
-    
         &__block {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(2, 1fr);
@@ -831,15 +1024,13 @@
     }
 
     .clients {
-
         &__logo--special {
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(3, 1fr);
-    }
+        }
     }
 
     .blog {
-
         &__heading {
             padding-bottom: 30px;
         }
@@ -875,7 +1066,6 @@
     }
 
     .competence {
-
         &__block {
             flex-direction: row-reverse;
             gap: 60px;
@@ -893,7 +1083,6 @@
     }
 
     .picture-team {
-
         &__text {
             padding-top: 103px;
             padding-bottom: 103px;
@@ -924,7 +1113,6 @@
     }
 
     .team {
-    
         .team-block {
 
             &__img {
@@ -951,7 +1139,6 @@
     }
 
     .picture-team {
-
         &__text {
             padding-top: 163px;
             padding-bottom: 163px;
@@ -980,8 +1167,6 @@
     }
 }
 
-
-
 @media screen and (min-width: 1920px) {
 
     .introduction {
@@ -998,7 +1183,6 @@
     }
 
     .picture-team {
-
         &__text {
             padding-top: 236px;
             padding-bottom: 231px;
