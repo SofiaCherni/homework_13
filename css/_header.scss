@@ -56,7 +56,7 @@
                 }
             }
     
-            &__address, &__social {
+            .group__address, .group__social {
                 display: none;
             }
     
@@ -113,11 +113,16 @@
                             height: 2px;
                             display: block;
                             margin-top: 5px;
-                            top: 14px;
-                            right: 0;
+                            top: 18px;
+                            right: 38px;
                             background: $color-accent;
                             transition: width .2s ease;
                             -webkit-transition: width .2s ease;
+                        
+                            @media screen and (min-width: 768px) {
+                                top: 14px;
+                                right: 0;
+                            }
                         }
                     }
                 }
@@ -369,6 +374,7 @@
                             height: 2px;
                             display: block;
                             margin-top: 5px;
+                            top: 14px;
                             right: 0;
                             background: $color-accent;
                             transition: width .2s ease;

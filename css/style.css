@@ -139,7 +139,7 @@ a {
   padding: 5px 7px;
   border-radius: 8px;
 }
-.header .header-top .header-group__address, .header .header-top .header-group__social {
+.header .header-top .header-group .group__address, .header .header-top .header-group .group__social {
   display: none;
 }
 .header .header-top .header-group .group__phone a {
@@ -184,11 +184,17 @@ a {
   height: 2px;
   display: block;
   margin-top: 5px;
-  top: 14px;
-  right: 0;
+  top: 18px;
+  right: 38px;
   background: #F0145A;
   transition: width 0.2s ease;
   -webkit-transition: width 0.2s ease;
+}
+@media screen and (min-width: 768px) {
+  .header .header-top .navbar .nav__item.active a::after {
+    top: 14px;
+    right: 0;
+  }
 }
 .header .header-top .navbar .nav__link {
   color: white;
@@ -395,6 +401,7 @@ a {
     height: 2px;
     display: block;
     margin-top: 5px;
+    top: 14px;
     right: 0;
     background: #F0145A;
     transition: width 0.2s ease;
