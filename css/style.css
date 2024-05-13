@@ -631,19 +631,30 @@ a {
 
 .team {
   padding-top: 30px;
+  position: relative;
+  padding-bottom: 60px;
 }
-.team .team-block {
+.team .slider-container {
+  overflow: hidden;
+  width: 100%;
+}
+.team .slider-container .slider {
+  width: 300%;
+  display: flex;
+}
+.team .slider-container .slider .team-block {
+  width: 33.3%;
   display: flex;
   flex-direction: column;
   background-color: #F5F5FA;
   border-radius: 12px;
 }
-.team .team-block__img {
+.team .slider-container .slider .team-block__img {
   position: relative;
   overflow: hidden;
   height: 500px;
 }
-.team .team-block__img img {
+.team .slider-container .slider .team-block__img img {
   position: absolute;
   top: 0;
   left: 0;
@@ -654,12 +665,12 @@ a {
   -o-object-position: center;
      object-position: center;
 }
-.team .team-block__info {
+.team .slider-container .slider .team-block__info {
   display: flex;
   flex-direction: column;
   padding: 30px;
 }
-.team .team-block__text {
+.team .slider-container .slider .team-block__text {
   font-size: 30px;
   font-weight: 700;
   line-height: 37px;
@@ -668,39 +679,52 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.team .team-block__name {
+.team .slider-container .slider .team-block__name {
   padding-top: 30px;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.2;
   color: #B3B3BA;
 }
-.team .team-block__post {
+.team .slider-container .slider .team-block__post {
   padding-top: 6px;
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
 }
-.team .carousel {
-  display: flex;
-  position: relative;
-  gap: 15px;
-  padding-top: 30px;
-  justify-content: center;
+.team .slider-container .slider input[name=block] {
+  position: absolute;
+  visibility: hidden;
 }
-.team .carousel span {
+.team .slider-container .slider #block1:checked ~ .s1 {
+  margin-left: 2px;
+}
+.team .slider-container .slider #block2:checked ~ .s1 {
+  margin-left: -33.2%;
+}
+.team .slider-container .slider #block3:checked ~ .s1 {
+  margin-left: -66.6%;
+}
+.team .carousel {
+  padding-top: 30px;
+  position: absolute;
+  left: 50%;
+  top: 98%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px;
+}
+.team .carousel .circle {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.team .carousel span:nth-child(1), .team .carousel span:nth-child(2), .team .carousel span:nth-child(3) {
   background-color: #24A3FF;
-}
-.team .carousel span:nth-child(2), .team .carousel span:nth-child(3) {
   opacity: 0.2;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.team .carousel .circle:hover {
+  opacity: 1;
 }
 
 .clients__heading {
@@ -802,12 +826,16 @@ a {
   gap: 15px;
 }
 .box .footer-popup__heading {
-  font-size: 24px;
+  font-size: 22px;
 }
 .box .footer-popup__text {
+  padding-top: 15px;
   font-size: 16px;
   line-height: 1.2;
   padding-bottom: 50px;
+}
+.box .footer-popup__contact-form {
+  padding-bottom: 20px;
 }
 .box .footer-popup__contact-form input[type=tel] {
   color: #B3B3BA;
@@ -870,7 +898,7 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  padding: 20px 3%;
+  padding: 20px 5%;
   border-radius: 12px;
   background-color: #F5F5FA;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -878,8 +906,8 @@ a {
 
 #cross {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
   width: 20px;
   height: 20px;
 }
@@ -1245,7 +1273,7 @@ a {
     width: 70px;
     height: 70px;
   }
-  .footer-popup__heading {
+  .box .footer-popup__heading {
     font-size: 32px;
   }
   #popup {
@@ -1285,18 +1313,18 @@ a {
   .team {
     padding-top: 30px;
   }
-  .team .team-block {
+  .team .slider-container .slider .team-block {
     flex-direction: row;
   }
-  .team .team-block__img {
+  .team .slider-container .slider .team-block__img {
     border-radius: 8px 0 0 8px;
     width: 40%;
     height: 528px;
   }
-  .team .team-block__info {
+  .team .slider-container .slider .team-block__info {
     width: 60%;
   }
-  .team .team-block__text {
+  .team .slider-container .slider .team-block__text {
     font-size: 38px;
     line-height: 46px;
   }
@@ -1364,11 +1392,14 @@ a {
   .introduction {
     padding: 60px 180px;
   }
-  .team .team-block__img {
+  .team {
+    padding-top: 30px;
+  }
+  .team .slider-container .slider .team-block__img {
     width: 30%;
     height: 344px;
   }
-  .team .team-block__info {
+  .team .slider-container .slider .team-block__info {
     width: 70%;
   }
   .acquaintance {
