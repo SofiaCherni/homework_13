@@ -175,9 +175,8 @@
     &__logo {
         display: grid;
         grid-template-rows: repeat(6, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
         grid-template-columns: 1fr;
+        justify-items: stretch;
     }
 
     &__logo--special {
