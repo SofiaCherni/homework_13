@@ -376,6 +376,9 @@
 
 .header-aboutpage {
     background: none;
+    .header-wrap {
+        background: none;
+    }
 }
 
 @media screen and (min-width: 768px) {
