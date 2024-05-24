@@ -767,25 +767,12 @@ a {
   position: absolute;
   visibility: hidden;
 }
-.team .slider-container .slider #block1:checked ~ .s1 {
-  margin-left: 2px;
-}
-.team .slider-container .slider #block2:checked ~ .s1 {
-  margin-left: -33.2%;
-}
-.team .slider-container .slider #block3:checked ~ .s1 {
-  margin-left: -66.6%;
-}
-.team .carousel {
-  padding-top: 30px;
+.team .slider-container .slider label {
   position: absolute;
   left: 50%;
   top: 98%;
   transform: translate(-50%, -50%);
   display: flex;
-  gap: 10px;
-}
-.team .carousel .circle {
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -794,8 +781,25 @@ a {
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }
-.team .carousel .circle:hover {
+.team .slider-container .slider #btn1 {
+  left: 44%;
+}
+.team .slider-container .slider #btn3 {
+  left: 56%;
+}
+.team .slider-container .slider #block1:checked ~ #btn1,
+.team .slider-container .slider #block2:checked ~ #btn2,
+.team .slider-container .slider #block3:checked ~ #btn3 {
   opacity: 1;
+}
+.team .slider-container .slider #block1:checked ~ .s1 {
+  margin-left: 2px;
+}
+.team .slider-container .slider #block2:checked ~ .s1 {
+  margin-left: -33.2%;
+}
+.team .slider-container .slider #block3:checked ~ .s1 {
+  margin-left: -66.6%;
 }
 
 .clients__heading {
@@ -1064,67 +1068,88 @@ a {
 .achievements {
   background: #F5F5FA;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 76px;
+  position: relative;
 }
 .achievements__heading {
   padding-bottom: 30px;
 }
 .achievements__block {
+  overflow: hidden;
+  width: 100%;
+}
+.achievements__slider {
+  width: 600%;
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
   line-height: 0;
 }
-.achievements__block div:nth-child(1) img {
-  padding: 25px 30%;
+.achievements__slider input[name=block] {
+  position: absolute;
+  visibility: hidden;
 }
-@media screen and (max-width: 768px) {
-  .achievements__block div:nth-child(1) {
-    width: 100%;
-  }
-  .achievements__block div:nth-child(1) img {
-    padding: 25px 40%;
-  }
-}
-.achievements__block div:nth-child(2) img {
-  padding: 25px 10%;
-}
-.achievements__block div:nth-child(3) img {
-  padding: 25px 1px;
-}
-.achievements__block div:nth-child(4) img {
-  padding: 25px 8%;
-}
-@media screen and (max-width: 768px) {
-  .achievements__block div:not(:nth-child(1)) {
-    display: none;
-  }
-}
-.achievements__picture {
-  width: 100%;
-  background: white;
-  border-radius: 12px;
-}
-.achievements .carousel {
+.achievements__slider label {
+  position: absolute;
+  left: 46%;
+  top: 85%;
+  transform: translate(-50%, -50%);
   display: flex;
-  position: relative;
-  gap: 15px;
-  padding-top: 30px;
-  justify-content: center;
-}
-.achievements .carousel span {
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: #24A3FF;
-}
-.achievements .carousel span:not(:nth-child(1)) {
   opacity: 0.2;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
 }
-@media screen and (min-width: 768px) {
-  .achievements .carousel span:nth-child(4), .achievements .carousel span:nth-child(5), .achievements .carousel span:nth-child(6) {
-    display: none;
-  }
+.achievements__slider #btn1 {
+  left: 30%;
+}
+.achievements__slider #btn2 {
+  left: 38%;
+}
+.achievements__slider #btn4 {
+  left: 54%;
+}
+.achievements__slider #btn5 {
+  left: 62%;
+}
+.achievements__slider #btn6 {
+  left: 70%;
+}
+.achievements__slider #block1:checked ~ #btn1,
+.achievements__slider #block2:checked ~ #btn2,
+.achievements__slider #block3:checked ~ #btn3,
+.achievements__slider #block4:checked ~ #btn4,
+.achievements__slider #block5:checked ~ #btn5,
+.achievements__slider #block6:checked ~ #btn6 {
+  opacity: 1;
+}
+.achievements__slider #block2:checked ~ .s1 {
+  margin-left: -16.66%;
+}
+.achievements__slider #block3:checked ~ .s1 {
+  margin-left: -33.32%;
+}
+.achievements__slider #block4:checked ~ .s1 {
+  margin-left: -49.98%;
+}
+.achievements__slider #block5:checked ~ .s1 {
+  margin-left: -66.64%;
+}
+.achievements__slider #block6:checked ~ .s1 {
+  margin-left: -83.3%;
+}
+.achievements__item {
+  display: none;
+}
+.achievements__picture {
+  width: 16.67%;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper {
@@ -1253,6 +1278,12 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+  .team .slider-container .slider #btn1 {
+    left: 46%;
+  }
+  .team .slider-container .slider #btn3 {
+    left: 54%;
+  }
   .clients__logo {
     display: none;
   }
@@ -1294,6 +1325,50 @@ a {
   .competence__info {
     padding-top: 0;
   }
+  .achievements__slider {
+    width: 300%;
+  }
+  .achievements__slider .mobile {
+    display: none;
+  }
+  .achievements__slider label {
+    left: 54%;
+  }
+  .achievements__slider #btn1 {
+    left: 46%;
+  }
+  .achievements__slider #btn2 {
+    left: 50%;
+  }
+  .achievements__slider #btn4,
+  .achievements__slider #btn5,
+  .achievements__slider #btn6 {
+    display: none;
+  }
+  .achievements__slider #block1:checked ~ .s1 {
+    margin-left: 2px;
+  }
+  .achievements__slider #block2:checked ~ .s1 {
+    margin-left: -33.3%;
+  }
+  .achievements__slider #block3:checked ~ .s1 {
+    margin-left: -66.6%;
+  }
+  .achievements__item {
+    display: flex;
+    width: 33.3%;
+    align-items: center;
+    gap: 40px;
+    padding: 0 5px;
+  }
+  .achievements__picture {
+    width: 25%;
+    min-height: 90px;
+    background: white;
+  }
+  .achievements__picture--spesial {
+    width: 53.3px;
+  }
   .wrapper {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -1319,6 +1394,12 @@ a {
   }
 }
 @media screen and (min-width: 1024px) {
+  .team .slider-container .slider #btn1 {
+    left: 47%;
+  }
+  .team .slider-container .slider #btn3 {
+    left: 53%;
+  }
   .team .slider-container .slider .team-block {
     flex-direction: row;
   }
@@ -1376,6 +1457,18 @@ a {
   .competence__info {
     width: 57%;
   }
+  .achievements__slider label {
+    left: 53%;
+  }
+  .achievements__slider #btn1 {
+    left: 47%;
+  }
+  .achievements__picture {
+    min-height: 110px;
+  }
+  .achievements__picture--spesial {
+    width: 80px;
+  }
   .picture-team__text {
     padding-top: 103px;
     padding-bottom: 103px;
@@ -1395,6 +1488,12 @@ a {
   }
 }
 @media screen and (min-width: 1440px) {
+  .team .slider-container .slider #btn1 {
+    left: 48%;
+  }
+  .team .slider-container .slider #btn3 {
+    left: 52%;
+  }
   .team .slider-container .slider .team-block__img {
     width: 30%;
     height: 344px;
@@ -1427,6 +1526,12 @@ a {
   }
   .competence__info {
     width: 64%;
+  }
+  .achievements__slider label {
+    left: 52%;
+  }
+  .achievements__slider #btn1 {
+    left: 48%;
   }
   .wrapper {
     padding: 60px 180px;

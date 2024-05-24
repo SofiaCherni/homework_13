@@ -126,6 +126,34 @@
                 visibility: hidden;
             }
 
+            & label {
+                position: absolute;
+                left: 50%;
+                top: 98%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: #24A3FF;
+                opacity: 0.2;
+                cursor: pointer;
+                transition: all .4s ease-in-out;
+            }
+    
+            #btn1 {
+                left: 44%;
+            }
+            #btn3 {
+                left: 56%;
+            }
+    
+            #block1:checked ~ #btn1,
+            #block2:checked ~ #btn2,
+            #block3:checked ~ #btn3 {
+                opacity: 1;
+            }
+
             #block1:checked ~ .s1 {
             margin-left: 2px;
             }
@@ -138,30 +166,6 @@
             margin-left: -66.6%;
             }
         }
-    }
-    
-    .carousel {
-        padding-top: 30px;
-        position: absolute;
-        left: 50%;
-        top: 98%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        gap: 10px;
-
-        .circle {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: #24A3FF;
-            opacity: 0.2;
-            cursor: pointer;
-            transition: all .4s ease-in-out;
-
-            &:hover {
-                opacity: 1;
-            }
-        } 
     }
 }
 
@@ -474,89 +478,105 @@
 .achievements {
     background: $color-grey-bg;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 76px;
+    position: relative;
 
     &__heading {
         padding-bottom: 30px;
     }
 
     &__block {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    &__slider {
+        width: 600%;
         display: flex;
-        justify-content: space-between;
-        gap: 40px;
         line-height: 0;
 
-        div:nth-child(1) {
-            img{
-                padding: 25px 30%;
-            }
-
-            @media screen and (max-width: 768px) {
-                width: 100%;
-
-                img{
-                    padding: 25px 40%;
-                }
-            }
+        input[name="block"] {
+            position: absolute;
+            visibility: hidden;
         }
 
-        div:nth-child(2) {
-            img {
-                padding: 25px 10%;
-            }
-        }
-
-        div:nth-child(3) {
-            img {
-                padding: 25px 1px;
-            }
-        }
-
-        div:nth-child(4) {
-            img {
-                padding: 25px 8%;
-            }
-        }
-        
-        @media screen and (max-width: 768px) {
-            
-            div:not(:nth-child(1)) {
-                display: none;
-            }
-        }
-    }
-
-    &__picture {
-        width: 100%;
-        background: white;
-        border-radius: 12px;
-    }
-    
-    .carousel {
-        display: flex;
-        position: relative;
-        gap: $gap-ux;
-        padding-top: 30px;
-        justify-content: center;
-
-        span {
+        & label {
+            position: absolute;
+            left: 46%;
+            top: 85%;
+            transform: translate(-50%, -50%);
+            display: flex;
             width: 16px;
             height: 16px;
             border-radius: 50%;
             background-color: #24A3FF;
-
-            &:not(:nth-child(1)) {
-                opacity: 0.2;
-            }
-
-            @media screen and (min-width: 768px) {
-                &:nth-child(4),
-                &:nth-child(5),
-                &:nth-child(6) {
-                    display: none;
-                }
-            }
+            opacity: 0.2;
+            cursor: pointer;
+            transition: all .4s ease-in-out;
         }
+
+        #btn1 {
+            left: 30%;
+        }
+        #btn2 {
+            left: 38%;
+        }
+        #btn4 {
+            left: 54%;
+        }
+        #btn5 {
+            left: 62%;
+        }
+        #btn6 {
+            left: 70%;
+        }
+
+        #block1:checked ~ #btn1,
+        #block2:checked ~ #btn2,
+        #block3:checked ~ #btn3,
+        #block4:checked ~ #btn4,
+        #block5:checked ~ #btn5,
+        #block6:checked ~ #btn6 {
+            opacity: 1;
+        }
+
+        // #block1:checked ~ .s1 {
+
+        // }
+
+        #block2:checked ~ .s1 {
+        margin-left: -16.66%;
+        }
+
+        #block3:checked ~ .s1 {
+        margin-left: -33.32%;
+        }
+
+        #block4:checked ~ .s1 {
+        margin-left: -49.98%;
+        }
+
+        #block5:checked ~ .s1 {
+        margin-left: -66.64%;
+        }
+
+        #block6:checked ~ .s1 {
+        margin-left: -83.3%;
+        }
+    }
+
+    &__item {
+        display: none;
+    }
+
+    &__picture {
+        width: 16.67%;
+        background: white;
+        border-radius: 12px;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -719,6 +739,20 @@
 
 @media screen and (min-width: 768px) {
 
+    .team {
+        .slider-container {
+            .slider {
+                #btn1 {
+                    left: 46%;
+                }
+                #btn3 {
+                    left: 54%;
+                }
+            }
+        }
+    }
+
+
     .clients {
         &__logo {
             display: none;
@@ -777,6 +811,64 @@
         }
     }
 
+    .achievements {
+        &__slider {
+            width: 300%;
+
+            .mobile{
+                display: none;
+            }
+    
+            & label {
+                left: 54%;
+            }
+    
+            #btn1 {
+                left: 46%;
+            }
+
+            #btn2 {
+                left: 50%;
+            }
+
+            #btn4,
+            #btn5,
+            #btn6 {
+                display: none;
+            }
+    
+            #block1:checked ~ .s1 {
+            margin-left: 2px;
+            }
+    
+            #block2:checked ~ .s1 {
+            margin-left: -33.3%;
+            }
+    
+            #block3:checked ~ .s1 {
+            margin-left: -66.6%;
+            }
+        }
+    
+        &__item {
+            display: flex;
+            width: 33.3%;
+            align-items: center;
+            gap: 40px;
+            padding: 0 5px;
+        }
+    
+        &__picture {
+            width: 25%;
+            min-height: 90px;
+            background: white;
+
+            &--spesial {
+                width: 53.3px;
+            }
+        }
+    }
+
     .wrapper {
         padding-top: 60px;
         padding-bottom: 60px;
@@ -817,9 +909,15 @@
 
 @media screen and (min-width: 1024px) {
 
-    .team {    
+    .team {
         .slider-container {
             .slider { 
+                #btn1 {
+                    left: 47%;
+                }
+                #btn3 {
+                    left: 53%;
+                }
                 .team-block {
                     flex-direction: row;
             
@@ -901,6 +999,25 @@
         }
     }
 
+    .achievements {
+        &__slider {
+            & label {
+                left: 53%;
+            }
+    
+            #btn1 {
+                left: 47%;
+            }
+        }
+    
+        &__picture {
+            min-height: 110px;
+            &--spesial {
+                width: 80px;
+            }
+        }
+    }
+
     .picture-team {
         &__text {
             padding-top: 103px;
@@ -930,6 +1047,12 @@
     .team {
         .slider-container {
             .slider { 
+                #btn1 {
+                    left: 48%;
+                }
+                #btn3 {
+                    left: 52%;
+                }
                 .team-block {
 
                     &__img {
@@ -978,6 +1101,18 @@
 
         &__info {
             width: 64%;
+        }
+    }
+
+    .achievements {
+        &__slider {
+            & label {
+                left: 52%;
+            }
+    
+            #btn1 {
+                left: 48%;
+            }
         }
     }
 
