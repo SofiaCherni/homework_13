@@ -1,6 +1,10 @@
 @use "../css/skin" as *;
 @use "../css/variables" as *;
 
+body.lock {
+    overflow: hidden;
+}
+
 .header {
     background: $gradient-soft;
     border-radius: 0px 0px 12px 12px;
@@ -19,14 +23,15 @@
     
             .header-group {
                 grid-area: group;
+                position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 padding: 10px 15px;
                 background: rgba(245, 245, 250, 0.2);
+                z-index: 2;
                 
     // language conteiner
-    
                 &__language {
                     display: flex;
                     align-items: center;
@@ -97,28 +102,40 @@
                 padding-right: 15px;
     
                 .nav {
-                    display: none;
+                    position: fixed;
+                    overflow: auto;
+                    height: 100%;
+                    top: -100%;
+                    left: 0;
+                    background-color: $color-main;
+                    width: 100%;
+                    display: flex;
+                    gap: 10px;
+                    flex-direction: column;
+                    padding-top: 70px;
+                    align-items: center;
+                    transition: all .3s ease 0s;
         
                     &.active {
-                        display: flex;
-                        flex-direction: column;
+                        top: 0;
                     }
     
                     &__item.active {
                         position: relative;
-    
+                        a.nav__link--contactpage::after {
+                            width: 74px;
+                        }
                         a {
                             color: $color-accent;
                             
                             &::after {
                                 content: '';
                                 position: absolute;
-                                width: 76px;
+                                width: 85px;
                                 height: 2px;
                                 display: block;
                                 margin-top: 5px;
                                 top: 18px;
-                                right: 38px;
                                 background: $color-accent;
                                 transition: width .2s ease;
                                 -webkit-transition: width .2s ease;
@@ -134,7 +151,7 @@
                     &__link {
                         color: white;
                         font-weight: 700;
-                        font-size: $font-size;
+                        font-size: 18px;
                         letter-spacing: 0.3px;
                         padding: 6px;
                         display: block;
@@ -162,13 +179,11 @@
                     transform: rotate(0deg);
                     transition: all .5s ease-in-out;
                     cursor: pointer;
-        
-                    &.active {
-                        top: 15px;
-                        left: 92px;
-                    }
+                    z-index: 2;
                     
                     &.active span {
+                        background-color: white;
+
                         &:nth-child(1) {
                             top: 14px;
                             left: 7px;
@@ -495,11 +510,22 @@
                     .nav {
                         display: flex;
                         gap: $gap-ux;
+                        position: static;
+                        flex-direction: row;
+                        padding-top: 0;
+                        background-color: transparent;
+                        overflow: visible;
     
                         &.active {
                             flex-direction: row;
                         }
-            
+                        
+                        &__item.active {
+                            a::after {
+                                width: 80px;
+                                }
+                        }
+
                         &__link {
                             position: relative;
                             font-size: $font-size;

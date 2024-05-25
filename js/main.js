@@ -13,16 +13,12 @@ langs.forEach(function(lang) {
 let burger = document.getElementById("burger");
 let navbarlist = document.getElementById("navbarList");
 let title = document.querySelector('.header-title__heading');
+let lock = document.getElementById('lock');
 
 burger.addEventListener("click", function() {
     burger.classList.toggle('active'); 
     navbarlist.classList.toggle('active'); 
-    if (navbarlist.classList.contains('active')) {
-        title.style.paddingTop = '20px';
-        console.log(title);
-    } else {
-        title.style.paddingTop = '126px';
-    }
+    lock.classList.toggle('lock'); 
 });
 
 const linkPopup = document.querySelector("#linkpopup");
