@@ -1,24 +1,9 @@
 @use "../css/skin" as *;
 @use "../css/variables" as *;
 
-.section__link {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: $line-height;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: $color-active;
-    padding-bottom: 10px;
-
-    &:hover {
-        color: $color-active-activ;
-    }
-}
-
 .section__title {
     font-size: 30px;
     font-weight: 700;
-    line-height: $line-height;
     background: $gradient-redtext-rev;
     background-clip: text;
     -webkit-background-clip: text;
@@ -30,27 +15,35 @@
     }
 }
 
+.section__link,
 .section__heading {
-    text-align: center;
     font-size: 14px;
-    color: #323264;
     font-weight: 700;
-    line-height: normal;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
+.section__link {
+    color: $color-active;
+    padding-bottom: 10px;
+
+    &:hover {
+        color: $color-active-activ;
+    }
+}
+
+.section__heading {
+    text-align: center;
+    color: #323264;
+}
+
 .group__phone {
-    font-size: $font-size;
     font-weight: 700;
-    line-height: 20px;
     white-space: nowrap;
 }
 
 .group__address {
     position: relative;
-    font-size: $font-size;
-    line-height: 20px;
     color: $color-grey-text;
 }
 
@@ -108,16 +101,13 @@
         
                 &__name {
                     padding-top: 30px;
-                    font-size: $font-size;
                     font-weight: 700;
-                    line-height: $line-height;
                     color: $color-grey-text;
                 }
                 &__post {
                     padding-top: 6px;
                     font-size: 14px;
                     line-height: 22px;
-                    font-weight: 400;
                 }
             }
 
@@ -203,9 +193,14 @@
         }
     }
 
-    &__content {
+    &__content,
+    &__item,
+    &__preveiw {
         display: flex;
         flex-direction: column;
+    }
+
+    &__content {
         align-items: center;
         gap: $gap-md;
         padding-top: 30px;
@@ -214,8 +209,6 @@
     &__item {
         border-radius: 8px;
         background-color: white;
-        display: flex;
-        flex-direction: column;
 
         &:hover {
             transition: border-color 0.3s ease-in-out;
@@ -225,16 +218,12 @@
     }
 
     &__preveiw {
-        display: flex;
-        flex-direction: column;
         padding: 30px;
     }
 
     &__title {
-        font-size: $font-size;
         color: #24A3FF;
         font-weight: 700;
-        line-height: 20px;
     }
 
     &__data {
@@ -254,7 +243,6 @@
         line-height: 22px;
     }
 }
-
 // popup 
 .box {
     .call-back {
@@ -293,8 +281,6 @@
 
         &__text {
             padding-top: 15px;
-            font-size: $font-size;
-            line-height: $line-height;
             padding-bottom: 50px;
         }
     
@@ -401,16 +387,16 @@
 #cross::after {
     transform: rotate(-45deg);
 }
-
 //about
-
 .acquaintance {
     display: flex;
     flex-direction: column;
     padding-top: 30px;
     padding-bottom: 30px;
 
-    &__block {
+    &__block,
+    &__advantages,
+    &__icon {
         display: flex;
         flex-direction: column;
     }
@@ -423,15 +409,12 @@
     }
 
     &__advantages {
-        display: flex;
-        flex-direction: column;
         gap: 40px;
         padding-left: 30px;
         border-left: 4px solid $color-grey-separator;
     }
 
     &__icon {
-        display: flex;
         align-items: center;
         justify-content: flex-start;
         gap: 8px;
@@ -443,8 +426,6 @@
 
     &__text {
         color: $color-main;
-        font-size: 16px;
-        line-height: $line-height;
     }
 }
 
@@ -540,10 +521,6 @@
             opacity: 1;
         }
 
-        // #block1:checked ~ .s1 {
-
-        // }
-
         #block2:checked ~ .s1 {
         margin-left: -16.66%;
         }
@@ -579,16 +556,15 @@
         justify-content: center;
     }
 }
-
 //contact
-
 .wrapper {
     display: flex;
     flex-direction: column;
     padding-top: 30px;
     padding-bottom: 30px;
 
-    .contact {
+    .contact,
+    .block-form {
         display: flex;
         flex-direction: column;
 
@@ -606,11 +582,16 @@
             color: $color-main-alt;
         }
         
-        &__communication {
+        &__communication,
+        &__social {
             display: flex;
+            padding-top: 30px;
+        }
+
+        &__communication {
             flex-direction: column;
             gap: 15px;
-            padding: 30px 0;
+            padding-bottom: 30px;
             border-bottom: 4px solid $color-grey-separator;
         }
 
@@ -625,10 +606,8 @@
         }
 
         &__social {
-            display: flex;
             align-items: center;
             gap: 10px;
-            padding-top: 30px;
             cursor: pointer;
 
             &:hover > * {
@@ -636,14 +615,16 @@
             }
         }
 
-        &__facebook {
-            font-size: 38px;
-            line-height: $line-height;
+        &__facebook,
+        &__info {
             color: $color-active;
         }
 
+        &__facebook {
+            font-size: 38px;
+        }
+
         &__info {
-            color: $color-active;
             font-size: 12px;
             font-weight: 700;
             line-height: 16px;
@@ -653,8 +634,6 @@
     }
 
     .block-form {
-        display: flex;
-        flex-direction: column;
         margin-top: 30px;
         padding: 30px;
         background-color: $color-grey-bg;
@@ -727,11 +706,6 @@
                 padding-top: 30px;
                 padding-bottom: 15px;
                 color: $color-grey-text;
-                font-size: 14px;;
-                font-weight: 700;
-                line-height: $line-height;
-                letter-spacing: 1px;
-                text-transform: uppercase;
             }
         }
     }
@@ -762,8 +736,6 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(4, 1fr);
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
 
             img {
                 width: 100%;
@@ -795,8 +767,7 @@
 
     .picture-team {
         &__text {
-            padding-top: 89px;
-            padding-bottom: 89px;
+            padding: 89px 35px;
             font-size: 46px;
         }
     }
@@ -915,9 +886,11 @@
                 #btn1 {
                     left: 47%;
                 }
+
                 #btn3 {
                     left: 53%;
                 }
+
                 .team-block {
                     flex-direction: row;
             
@@ -1012,6 +985,7 @@
     
         &__picture {
             min-height: 110px;
+
             &--spesial {
                 width: 80px;
             }
@@ -1050,9 +1024,11 @@
                 #btn1 {
                     left: 48%;
                 }
+
                 #btn3 {
                     left: 52%;
                 }
+                
                 .team-block {
 
                     &__img {

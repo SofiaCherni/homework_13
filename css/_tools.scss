@@ -1,7 +1,7 @@
 @use "../css/variables" as *;
 @use "../css/skin" as *;
 
-html {
+body {
     font-size: $font-size;
     font-family: $font-family;
     font-weight: 400;
@@ -15,8 +15,6 @@ img {
 a {
     text-decoration: none;
 }
-
-
 
 .container {
     margin: 0 auto;
